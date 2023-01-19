@@ -118,6 +118,8 @@ obj-$(CONFIG_FB_MB862XX)	  += mb862xx/
 obj-$(CONFIG_FB_HYPERV)		  += hyperv_fb.o
 obj-$(CONFIG_FB_OPENCORES)	  += ocfb.o
 obj-$(CONFIG_FB_SM712)		  += sm712fb.o
+obj-$(CONFIG_FB_JZ4740)		  += jz4740_fb.o
+obj-$(CONFIG_FB_JZ4770)		  += jz4770_fb.o
 
 # Platform or fallback drivers go here
 obj-$(CONFIG_FB_UVESA)            += uvesafb.o
