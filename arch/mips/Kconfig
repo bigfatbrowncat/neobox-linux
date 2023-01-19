@@ -132,6 +132,7 @@ menu "Machine selection"
 choice
 	prompt "System type"
 	default MIPS_GENERIC_KERNEL
+#	default MACH_JZ4770
 
 config MIPS_GENERIC_KERNEL
 	bool "Generic board-agnostic MIPS kernel"
@@ -1031,8 +1032,8 @@ source "arch/mips/bmips/Kconfig"
 source "arch/mips/generic/Kconfig"
 source "arch/mips/ingenic/Kconfig"
 source "arch/mips/jazz/Kconfig"
-#source "arch/mips/jz4740/Kconfig"
-#source "arch/mips/jz4770/Kconfig"
+source "arch/mips/jz4740/Kconfig"
+source "arch/mips/jz4770/Kconfig"
 source "arch/mips/lantiq/Kconfig"
 source "arch/mips/pic32/Kconfig"
 source "arch/mips/ralink/Kconfig"
