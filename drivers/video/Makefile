@@ -11,6 +11,9 @@ obj-y				  += backlight/
 
 obj-y				  += fbdev/
 
+obj-$(CONFIG_MACH_JZ4740)    += jz4740_fb.o
+obj-$(CONFIG_MACH_JZ4770)    += jz4770_fb.o
+
 obj-$(CONFIG_VIDEOMODE_HELPERS) += display_timing.o videomode.o
 ifeq ($(CONFIG_OF),y)
 obj-$(CONFIG_VIDEOMODE_HELPERS) += of_display_timing.o of_videomode.o
