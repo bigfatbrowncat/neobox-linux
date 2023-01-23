@@ -10,8 +10,8 @@
 #define __JZ4770CPM_H__
 
 #include <asm/addrspace.h>
-#include <asm/mach-jz4770/base.h>
-#include <asm/mach-jz4770/jz4770misc.h>
+#include <asm/mach-ingenic/jz4770base.h>
+#include <asm/mach-ingenic/jz4770misc.h>
 
 
 #ifndef JZ_EXTAL
