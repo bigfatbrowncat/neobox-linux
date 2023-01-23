@@ -56,6 +56,7 @@
 #define IPS_LKWY030C02_2_8
 #include <asm/mach-ingenic/jz4770cpm.h>
 #include <asm/mach-ingenic/jz4770_gpio.h>
+#include <asm/mach-ingenic/jz4770_irq.h>
 
 #define MAX_XRES 640
 #define MAX_YRES 480
