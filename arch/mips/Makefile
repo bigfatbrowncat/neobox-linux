@@ -551,6 +551,9 @@ xilfpga_defconfig-y		:= 32r2el_defconfig BOARDS=xilfpga
 legacy_defconfigs		+= pistachio_defconfig
 pistachio_defconfig-y		:= 32r2el_defconfig BOARDS=marduk
 
+# ingenic additions
+drivers-$(CONFIG_MACH_INGENIC)	+= arch/mips/ingenic/
+
 .PHONY: $(legacy_defconfigs)
 $(legacy_defconfigs):
 	$(Q)$(MAKE) -f $(srctree)/Makefile $($@-y)
