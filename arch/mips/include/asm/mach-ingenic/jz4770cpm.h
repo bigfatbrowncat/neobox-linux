@@ -10,7 +10,6 @@
 #define __JZ4770CPM_H__
 
 #include <asm/addrspace.h>
-#include <uapi/linux/synclink.h>
 #include <asm/mach-ingenic/jz4770base.h>
 #include <asm/mach-ingenic/jz4770misc.h>
 
