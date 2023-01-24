@@ -108,7 +108,7 @@ void __init arch_init_irq(void)
 
 	irq_setup_generic_chip(gc, IRQ_MSK(32), 0, 0, IRQ_NOPROBE | IRQ_LEVEL);
 
-	setup_irq(2, &jz4740_cascade_action);
+	setup_percpu_irq(2, &jz4740_cascade_action);
 }
 
 asmlinkage void plat_irq_dispatch(void)
