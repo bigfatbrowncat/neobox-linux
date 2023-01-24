@@ -29,7 +29,7 @@
 #include <asm/mipsregs.h>
 #include <asm/irq_cpu.h>
 
-#include <asm/mach/jz4740base.h>
+#include <asm/mach-ingenic/jz4740base.h>
 
 static void __iomem *jz_intc_base;
 
