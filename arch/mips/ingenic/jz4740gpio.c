@@ -26,7 +26,7 @@
 #include <linux/debugfs.h>
 #include <linux/seq_file.h>
 
-#include <asm/mach-jz4740/base.h>
+#include <asm/mach-ingenic/jz4740base.h>
 
 #include "irq.h"
 
