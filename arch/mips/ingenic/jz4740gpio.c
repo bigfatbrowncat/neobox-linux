@@ -28,6 +28,7 @@
 
 #include <asm/mach-ingenic/jz4740base.h>
 #include <asm/mach-ingenic/jz4740gpio.h>
+#include <asm/mach-ingenic/jz4740irq.h>
 
 #include "irq.h"
 
