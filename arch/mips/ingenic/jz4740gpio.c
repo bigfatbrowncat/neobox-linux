@@ -27,6 +27,7 @@
 #include <linux/seq_file.h>
 
 #include <asm/mach-ingenic/jz4740base.h>
+#include <asm/mach-ingenic/jz4740gpio.h>
 
 #include "irq.h"
 
