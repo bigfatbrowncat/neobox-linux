@@ -264,19 +264,19 @@ uint32_t jz_gpio_port_get_value(int port, uint32_t mask)
 }
 EXPORT_SYMBOL(jz_gpio_port_get_value);
 
-static inline int gpio_to_irq(unsigned int gpio)
+static inline int jz_gpio_to_irq(unsigned int gpio)
 {
 	return JZ4740_IRQ_GPIO(0) + gpio;
 }
-EXPORT_SYMBOL_GPL(gpio_to_irq);
+EXPORT_SYMBOL_GPL(jz_gpio_to_irq);
 
-static inline int irq_to_gpio(unsigned int irq)
+static inline int jz_irq_to_gpio(unsigned int irq)
 {
 	return irq - JZ4740_IRQ_GPIO(0);
 }
-EXPORT_SYMBOL_GPL(irq_to_gpio);
+EXPORT_SYMBOL_GPL(jz_irq_to_gpio);
 
-#define IRQ_TO_BIT(irq) BIT(irq_to_gpio(irq) & 0x1f)
+#define IRQ_TO_BIT(irq) BIT(jz_irq_to_gpio(irq) & 0x1f)
 
 static void jz_gpio_check_trigger_both(struct jz_gpio_chip *chip, unsigned int irq)
 {
