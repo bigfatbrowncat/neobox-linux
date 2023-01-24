@@ -264,13 +264,13 @@ uint32_t jz_gpio_port_get_value(int port, uint32_t mask)
 }
 EXPORT_SYMBOL(jz_gpio_port_get_value);
 
-int gpio_to_irq(unsigned gpio)
+static inline int gpio_to_irq(unsigned int gpio)
 {
 	return JZ4740_IRQ_GPIO(0) + gpio;
 }
 EXPORT_SYMBOL_GPL(gpio_to_irq);
 
-int irq_to_gpio(unsigned irq)
+static inline int irq_to_gpio(unsigned int irq)
 {
 	return irq - JZ4740_IRQ_GPIO(0);
 }
