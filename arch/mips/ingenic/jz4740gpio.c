@@ -30,6 +30,7 @@
 #include <asm/mach-ingenic/jz4740gpio.h>
 #include <asm/mach-ingenic/jz4740irq.h>
 
+#include <arch/mips/ingenic/jz4740irq.h>
 //#include "irq.h"
 
 #define JZ4740_GPIO_BASE_A (32*0)
