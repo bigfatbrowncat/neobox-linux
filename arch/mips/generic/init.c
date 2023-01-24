@@ -190,8 +190,8 @@ void __init plat_time_init(void)
 	timer_probe();
 }
 
-#if 0  // disabled in favor of arch/mips/ingenic/jz4740irq.c
-void __init arch_init_irq(void)
+//#if 0  // disabled in favor of arch/mips/ingenic/jz4740irq.c
+void __init gen_arch_init_irq(void)
 {
 	struct device_node *intc_node;
 
@@ -203,4 +203,4 @@ void __init arch_init_irq(void)
 
 	irqchip_init();
 }
-#endif
+//#endif

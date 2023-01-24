@@ -79,10 +79,13 @@ static struct irqaction jz4740_cascade_action = {
 	.name = "JZ4740 cascade interrupt",
 };
 
+extern void __init gen_arch_init_irq(void);
 void __init arch_init_irq(void)
 {
 	struct irq_chip_generic *gc;
 	struct irq_chip_type *ct;
+
+        gen_arch_init_irq();
 
 	mips_cpu_irq_init();
 
@@ -109,18 +112,6 @@ void __init arch_init_irq(void)
 	irq_setup_generic_chip(gc, IRQ_MSK(32), 0, 0, IRQ_NOPROBE | IRQ_LEVEL);
 
 	setup_percpu_irq(2, &jz4740_cascade_action);
-
-	// *************************************************************
-
-        struct device_node *intc_node;
-
-        intc_node = of_find_compatible_node(NULL, NULL,
-                                            "mti,cpu-interrupt-controller");
-        if (!cpu_has_veic && !intc_node)
-                mips_cpu_irq_init();
-        of_node_put(intc_node);
-
-        irqchip_init();
 }
 
 asmlinkage void plat_irq_dispatch(void)
