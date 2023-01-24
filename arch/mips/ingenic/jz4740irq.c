@@ -109,6 +109,18 @@ void __init arch_init_irq(void)
 	irq_setup_generic_chip(gc, IRQ_MSK(32), 0, 0, IRQ_NOPROBE | IRQ_LEVEL);
 
 	setup_percpu_irq(2, &jz4740_cascade_action);
+
+	// *************************************************************
+
+        struct device_node *intc_node;
+
+        intc_node = of_find_compatible_node(NULL, NULL,
+                                            "mti,cpu-interrupt-controller");
+        if (!cpu_has_veic && !intc_node)
+                mips_cpu_irq_init();
+        of_node_put(intc_node);
+
+        irqchip_init();
 }
 
 asmlinkage void plat_irq_dispatch(void)
