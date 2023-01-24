@@ -85,8 +85,6 @@ void __init arch_init_irq(void)
 	struct irq_chip_generic *gc;
 	struct irq_chip_type *ct;
 
-        gen_arch_init_irq();
-
 	mips_cpu_irq_init();
 
 	jz_intc_base = ioremap(JZ4740_INTC_BASE_ADDR, 0x14);
@@ -112,6 +110,8 @@ void __init arch_init_irq(void)
 	irq_setup_generic_chip(gc, IRQ_MSK(32), 0, 0, IRQ_NOPROBE | IRQ_LEVEL);
 
 	setup_percpu_irq(2, &jz4740_cascade_action);
+
+        gen_arch_init_irq();
 }
 
 asmlinkage void plat_irq_dispatch(void)
