@@ -21,6 +21,7 @@
 #include <linux/timex.h>
 #include <linux/slab.h>
 #include <linux/delay.h>
+#include <linux/irq.h>
 
 #include <linux/debugfs.h>
 #include <linux/seq_file.h>
@@ -31,6 +32,7 @@
 
 #include <asm/mach-ingenic/jz4740base.h>
 #include <asm/mach-ingenic/jz4740irq.h>
+
 
 static void __iomem *jz_intc_base;
 
