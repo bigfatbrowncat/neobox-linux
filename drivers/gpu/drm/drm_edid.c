@@ -238,11 +238,15 @@ static const struct edid_quirk {
  * This table is copied from xfree86/modes/xf86EdidModes.c.
  */
 static const struct drm_display_mode drm_dmt_modes[] = {
+	{ DRM_MODE("320x240", DRM_MODE_TYPE_DRIVER, 0,
+           320, 344, 392, 560, 0, 240, 240, 246, 263, 0,
+           DRM_MODE_FLAG_NHSYNC | DRM_MODE_FLAG_NVSYNC
+           | DRM_MODE_FLAG_DBLSCAN | DRM_MODE_FLAG_CLKDIV2) },
 	/* 320x240@60.00 15.660 Khz */
 	/* [drm] User-defined mode not supported: "320x240": 60 5263 320 304 336 352 240 241 244 249 0x20 0x6 */
-	{ DRM_MODE("320x240", DRM_MODE_TYPE_PREFERRED, 5263, 320, 304,
-		   336, 352, 0, 240, 241, 244, 249, 0,
-		   DRM_MODE_FLAG_NHSYNC | DRM_MODE_FLAG_PVSYNC) },
+//	{ DRM_MODE("320x240", DRM_MODE_TYPE_PREFERRED, 5263, 320, 304,
+//		   336, 352, 0, 240, 241, 244, 249, 0,
+//		   DRM_MODE_FLAG_NHSYNC | DRM_MODE_FLAG_PVSYNC) },
 	/* 0x01 - 640x350@85Hz */
 	{ DRM_MODE("640x350", DRM_MODE_TYPE_DRIVER, 31500, 640, 672,
 		   736, 832, 0, 350, 382, 385, 445, 0,
