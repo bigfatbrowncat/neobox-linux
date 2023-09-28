@@ -528,7 +528,7 @@ static int ingenic_drm_plane_atomic_check(struct drm_plane *plane,
 
 	/* Enable doublescan if the CRTC_H is twice the SRC_H. */
 	priv_state->doublescan = true; // (new_plane_state->src_h >> 16) * 2 == new_plane_state->crtc_h;
-        if (new_plane_state->crtc_h > 240) new_plane_state->crtc_h = 240;
+        if (new_plane_state->src_h > 240) new_plane_state->src_h = 240;
 
 	/* Otherwise, fail if CRTC_H != SRC_H */
 	if (!priv_state->doublescan && (new_plane_state->src_h >> 16) != new_plane_state->crtc_h)
