@@ -3079,6 +3079,8 @@ void fbcon_new_modelist(struct fb_info *info)
 					    &info->modelist);
 		fb_videomode_to_var(&var, mode);
 		fbcon_set_disp(info, &var, vc->vc_num);
+		
+		printk(KERN_WARNING, "!!!!!!!!!!!!!!!!!!! [fbcon_new_modelist]  MODE: %d x %d, mode->xres, mode->yres);
 	}
 }
 
