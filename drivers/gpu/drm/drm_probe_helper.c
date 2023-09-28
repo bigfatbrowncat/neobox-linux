@@ -576,6 +576,8 @@ retry:
 
 	count = drm_helper_probe_get_modes(connector);
 
+	count = drm_add_modes_noedid(connector, 320, 240);
+
 	if (count == 0 && (connector->status == connector_status_connected ||
 			   connector->status == connector_status_unknown)) {
 		count = drm_add_modes_noedid(connector, 1024, 768);
