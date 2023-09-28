@@ -3305,10 +3305,6 @@ static struct drm_display_mode *drm_mode_std(struct drm_connector *connector,
 		vsize = 768;
 	}
 
-	if (hsize == 320) {
-		vsize = 240;
-	}
-
 	/*
 	 * If this connector already has a mode for this size and refresh
 	 * rate (because it came from detailed or CVT info), use that
