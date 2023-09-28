@@ -528,7 +528,6 @@ static int ingenic_drm_plane_atomic_check(struct drm_plane *plane,
 
 	/* Enable doublescan if the CRTC_H is twice the SRC_H. */
 	priv_state->doublescan = true; // (new_plane_state->src_h >> 16) * 2 == new_plane_state->crtc_h;
-        if (new_plane_state->src_h > 240) new_plane_state->src_h = 240;
 
 	/* Otherwise, fail if CRTC_H != SRC_H */
 	if (!priv_state->doublescan && (new_plane_state->src_h >> 16) != new_plane_state->crtc_h)
@@ -1269,7 +1268,7 @@ static int ingenic_drm_bind(struct device *dev, bool has_components)
 	drm->mode_config.min_width = 0;
 	drm->mode_config.min_height = 0;
 	drm->mode_config.max_width = soc_info->max_width;
-	drm->mode_config.max_height = 4095;
+	drm->mode_config.max_height = 240;//4095;
 	drm->mode_config.funcs = &ingenic_drm_mode_config_funcs;
 	drm->mode_config.helper_private = &ingenic_drm_mode_config_helpers;
 
