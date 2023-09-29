@@ -44,6 +44,12 @@ config FONT_8x16
 
 	  If unsure, say Y.
 
+config FONT_8x32
+	bool "VGA 8x32 font" if FONTS
+	default y if !SPARC && !FONTS
+	help
+	  The twice vertically scaled 8x16 font
+
 config FONT_6x11
 	bool "Mac console 6x11 font (not supported by all drivers)" if FONTS
 	depends on FRAMEBUFFER_CONSOLE || STI_CONSOLE
