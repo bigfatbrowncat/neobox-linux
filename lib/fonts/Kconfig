@@ -145,6 +145,7 @@ config FONT_AUTOSELECT
 	depends on !FONT_10x18
 	depends on !FONT_TER16x32
 	depends on !FONT_6x8
-	select FONT_8x16
+	depends on !FONT_8x16
+	select FONT_8x32
 
 endif # FONT_SUPPORT
